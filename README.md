@@ -1,4 +1,4 @@
-# AlgoritmosAvancados
+# Algoritmos Avançados
 
 Este repositório reúne as atividades e exercícios desenvolvidos na disciplina de **Algoritmos Avançados**, do curso de **Engenharia de Software**.
 O objetivo é praticar a implementação de algoritmos, estruturas de dados e análise de complexidade utilizando **Python**.
