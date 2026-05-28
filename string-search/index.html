@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparação de Algoritmos de Busca</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Comparação de Algoritmos de Busca em Strings</h1>
+
+  <div class="controls">
+    <div class="field">
+      <label for="fileInput">Arquivo(s) .txt</label>
+      <input type="file" id="fileInput" multiple accept=".txt">
+    </div>
+
+    <div class="field">
+      <label for="patternInput">Pattern</label>
+      <input type="text" id="patternInput" placeholder="Digite o padrão a ser buscado">
+    </div>
+
+    <div class="field">
+      <label for="algorithmSelect">Algoritmo</label>
+      <select id="algorithmSelect">
+        <option value="naive">Naive</option>
+        <option value="rabinKarp">Rabin-Karp</option>
+        <option value="kmp">KMP</option>
+        <option value="boyerMoore">Boyer-Moore</option>
+      </select>
+    </div>
+
+    <div class="buttons">
+      <button onclick="runSearch()">Executar</button>
+      <button onclick="runStepByStep()">Passo a passo</button>
+      <button onclick="compareAll()">Comparar todos</button>
+    </div>
+  </div>
+
+  <section>
+    <h2>Resultados</h2>
+    <div id="results"></div>
+  </section>
+
+  <section>
+    <h2>Log passo a passo</h2>
+    <pre id="log"></pre>
+  </section>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
