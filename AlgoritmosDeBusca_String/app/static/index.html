@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Busca em Strings - N2</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Unidade 2 · N2</p>
+      <h1>Comparação de Algoritmos de Busca em Strings</h1>
+      <p>
+        Evolução da aplicação com Strategy, SearchResult, logs, métricas,
+        traces com OpenTelemetry e dashboard de monitoramento.
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Executar busca</h2>
+      <p class="muted">Envie um ou mais arquivos .txt, informe o padrão e escolha um algoritmo.</p>
+
+      <div class="form-grid">
+        <label>
+          Arquivos .txt
+          <input id="files" type="file" accept=".txt" multiple />
+        </label>
+
+        <label>
+          Pattern
+          <input id="pattern" type="text" placeholder="Ex.: algoritmo" />
+        </label>
+
+        <label>
+          Algoritmo
+          <select id="algorithm">
+            <option value="naive">Naive</option>
+            <option value="rabin-karp">Rabin-Karp</option>
+            <option value="kmp">KMP</option>
+            <option value="boyer-moore">Boyer-Moore</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="actions">
+        <button id="runBtn">Executar</button>
+        <button id="stepBtn" class="secondary">Passo a passo</button>
+        <button id="compareBtn" class="secondary">Comparar todos</button>
+        <button id="refreshDashboardBtn" class="ghost">Atualizar dashboard</button>
+      </div>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="metric-card">
+        <span>Total de execuções</span>
+        <strong id="totalExecutions">0</strong>
+      </article>
+      <article class="metric-card">
+        <span>Algoritmos monitorados</span>
+        <strong id="algorithmCount">0</strong>
+      </article>
+      <article class="metric-card">
+        <span>Último tempo</span>
+        <strong id="lastExecutionTime">0 ms</strong>
+      </article>
+    </section>
+
+    <section class="card">
+      <div class="section-header">
+        <div>
+          <h2>Dashboard de monitoramento</h2>
+          <p class="muted">Tempo médio, execuções e comparações por algoritmo.</p>
+        </div>
+      </div>
+      <div id="bars" class="bars"></div>
+    </section>
+
+    <section class="card">
+      <h2>Resultados</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Arquivo</th>
+              <th>Algoritmo</th>
+              <th>Tempo (ms)</th>
+              <th>Comparações</th>
+              <th>Tam. texto</th>
+              <th>Tam. padrão</th>
+              <th>Complexidade</th>
+              <th>Ocorrências</th>
+            </tr>
+          </thead>
+          <tbody id="resultsTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Log passo a passo</h2>
+      <pre id="stepLog">Execute uma busca com o botão "Passo a passo" para visualizar o log.</pre>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

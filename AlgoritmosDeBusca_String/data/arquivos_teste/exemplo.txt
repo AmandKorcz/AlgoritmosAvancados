@@ -1,0 +1,4 @@
+Este arquivo de exemplo foi criado para testar a aplicação de comparação de algoritmos de busca em strings.
+A palavra algoritmo aparece algumas vezes para permitir encontrar ocorrências.
+Um algoritmo pode ser simples como a busca naive ou mais elaborado como KMP, Rabin-Karp e Boyer-Moore.
+Na análise prática, cada algoritmo pode apresentar comportamento diferente dependendo do tamanho do texto e do padrão buscado.
